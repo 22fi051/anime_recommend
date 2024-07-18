@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% load bootstrap4 %}
+
+{% block main %}
+<div class="container">
+    <h1 class="text-center my-4">{{ anime.title }}</h1>
+    <div class="row">
+        <div class="col-md-8">
+            <p>評価: {{ anime.rating }}</p>
+            <p>ジャンル: {{ anime.genres }}</p>
+            <p>媒体: {{ anime.media }}</p>
+            <p>エピソード数: {{ anime.episodes }}</p>
+            <p>視聴者数: {{ anime.members }}</p>
+            <p>放送開始日時: {{ anime.start_date }}</p>
+            <p>シーズン: {{ anime.season }}</p>
+            <p>原作: {{ anime.source }}</p>
+        </div>
+    </div>
+    <a href="https://www.google.com/search?q={{ anime.title }}" class="btn btn-primary mb-4" target="_blank">このアニメをGoogleで検索</a>
+</div>
+{% endblock %}

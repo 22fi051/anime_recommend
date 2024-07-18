@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% load bootstrap4 %}
+
+{% block main %}
+<div class="container">
+    <h1 class="text-center my-4">ようこそ アニメレコメンドへ！</h1>
+    <h4 class="text-center mb-4">項目を入力するとおすすめのアニメを表示します</h4>
+    <form method="get" action="{% url 'results' %}" class="mb-4">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <button type="submit" class="btn btn-primary">検索</button>
+    </form>
+</div>
+
+{% endblock %}
